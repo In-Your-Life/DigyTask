@@ -33,6 +33,30 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('profile')" :active="request()->routeIs('profile')" wire:navigate>
+                        {{ __('Profilo') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tasks.kanban')" :active="request()->routeIs('tasks.kanban')" wire:navigate>
+                        {{ __('Task Kanban') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.*')" wire:navigate>
+                        {{ __('Task CRUD') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('user.preferences')" :active="request()->routeIs('user.preferences')" wire:navigate>
+                        {{ __('Preferenze Utente') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('activity.log')" :active="request()->routeIs('activity.log')" wire:navigate>
+                        {{ __('Log Attività') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tags.index')" :active="request()->routeIs('tags.*')" wire:navigate>
+                        {{ __('Gestione Tag') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('attachments.index')" :active="request()->routeIs('attachments.*')" wire:navigate>
+                        {{ __('Gestione Allegati') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('comments.index')" :active="request()->routeIs('comments.*')" wire:navigate>
+                        {{ __('Commenti') }}
+                    </x-nav-link>
                 </div>
             </div>
 
