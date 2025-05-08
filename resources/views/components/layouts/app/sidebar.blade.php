@@ -17,6 +17,20 @@
                 </flux:navlist.group>
             </flux:navlist>
 
+            <flux:navlist variant="outline">
+                <flux:navlist.group :heading="__('Gestionale')" class="grid">
+                    <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user" :href="route('profile')" :current="request()->routeIs('profile')" wire:navigate>{{ __('Profilo') }}</flux:navlist.item>
+                    <flux:navlist.item icon="view-columns" :href="route('tasks.kanban')" :current="request()->routeIs('tasks.kanban')" wire:navigate>{{ __('Task Kanban') }}</flux:navlist.item>
+                    <flux:navlist.item icon="clipboard-document-list" :href="route('tasks.index')" :current="request()->routeIs('tasks.*')" wire:navigate>{{ __('Task CRUD') }}</flux:navlist.item>
+                    <flux:navlist.item icon="cog" :href="route('user.preferences')" :current="request()->routeIs('user.preferences')" wire:navigate>{{ __('Preferenze Utente') }}</flux:navlist.item>
+                    <flux:navlist.item icon="clock" :href="route('activity.log')" :current="request()->routeIs('activity.log')" wire:navigate>{{ __('Log Attività') }}</flux:navlist.item>
+                    <flux:navlist.item icon="tag" :href="route('tags.index')" :current="request()->routeIs('tags.*')" wire:navigate>{{ __('Gestione Tag') }}</flux:navlist.item>
+                    <flux:navlist.item icon="paper-clip" :href="route('attachments.index')" :current="request()->routeIs('attachments.*')" wire:navigate>{{ __('Gestione Allegati') }}</flux:navlist.item>
+                    <flux:navlist.item icon="chat-bubble-left-right" :href="route('comments.index')" :current="request()->routeIs('comments.*')" wire:navigate>{{ __('Commenti') }}</flux:navlist.item>
+                </flux:navlist.group>
+            </flux:navlist>
+
             <flux:spacer />
 
             <flux:navlist variant="outline">

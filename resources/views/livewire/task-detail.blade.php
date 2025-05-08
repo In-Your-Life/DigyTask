@@ -255,4 +255,13 @@
             @endif
         </div>
     </div>
+    <div class="mb-4">
+        <h3 class="font-semibold mb-2">Azioni Speciali</h3>
+        <div class="flex flex-wrap gap-2">
+            <a href="{{ route('tasks.duplicate', $task->id) }}" class="px-3 py-1 rounded border text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">Duplica Task</a>
+            <a href="{{ route('tasks.changeStatus', $task->id) }}" class="px-3 py-1 rounded border text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">Cambia Stato</a>
+            <a href="{{ route('tasks.assign', $task->id) }}" class="px-3 py-1 rounded border text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">Assegna Task</a>
+            <a href="{{ route('tasks.makeTemplate', $task->id) }}" class="px-3 py-1 rounded border text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">Salva come Template</a>
+        </div>
+    </div>
 </div>
