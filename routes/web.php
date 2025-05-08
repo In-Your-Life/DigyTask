@@ -15,6 +15,8 @@ Route::view('profile', 'profile')
 
 Route::get('/share/{token}', [\App\Http\Controllers\PublicShareController::class, 'show'])->name('public.share');
 
+Route::get('/settings/profile', [ProfileController::class, 'edit'])->name('settings.profile');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/tasks/{task}/shared-pages/{sharedPage}/edit', SharedPageEditor::class)
         ->name('shared-pages.edit');
