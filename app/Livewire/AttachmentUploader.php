@@ -26,6 +26,13 @@ class AttachmentUploader extends Component
         'alt_text' => 'nullable|string|max:255',
     ];
 
+    public function index()
+    {
+        // ad esempio, restituisci tutti gli allegati
+        $attachments = Attachment::orderByDesc('created_at')->get();
+        return view('attachments.index', compact('attachments'));
+    }
+
     public function upload()
     {
         $this->validate();

@@ -33,10 +33,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tasks/{task}/chat', App\Livewire\TaskChat::class)->name('tasks.chat');
 
     // Commenti (Livewire o Controller)
-    Route::resource('comments', App\Http\Controllers\CommentController::class)->only(['store', 'update', 'destroy']);
+    Route::resource('comments', App\Http\Controllers\CommentController::class)
+        ->only(['index', 'store', 'update', 'destroy']);
 
     // Allegati (upload/download/elimina)
-    Route::resource('attachments', App\Http\Controllers\AttachmentController::class)->only(['store', 'destroy']);
+    Route::resource('attachments', App\Http\Controllers\AttachmentController::class)
+        ->only(['index', 'store', 'destroy']);
     Route::get('/attachments/{attachment}/download', [App\Http\Controllers\AttachmentController::class, 'download'])->name('attachments.download');
 
     // Tag Manager (Livewire)
@@ -58,4 +60,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/activity-log', [App\Http\Controllers\ActivityLogController::class, 'index'])->name('activity.log');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -22,6 +22,19 @@ class Comments extends Component
         'content' => 'required|string|min:1',
     ];
 
+    public function index(Request $request)
+    {
+        // se ti serve filtrare per task:
+        $taskId = $request->query('task_id');
+        $comments = Comment::with('user')
+            ->when($taskId, fn($q) => $q->where('task_id', $taskId))
+            ->orderBy('created_at')
+            ->get();
+
+        return view('comments.index', compact('comments'));
+    }
+
+
     public function addComment()
     {
         $this->validate();
